@@ -11,7 +11,7 @@ class Sandbase < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/sandbaseai/cli/releases/download/v0.1.1/sandbase_0.1.1_darwin_amd64.tar.gz"
-      sha256 "53712d0ca471b721c0939d1983f964f08487104b621b4bba12d74fa808f4937b"
+      sha256 "6d3e6cbfb2598a2a55f054e96813ace67be2cd9d2954ed698d9cc4749e587fb7"
 
       define_method(:install) do
         bin.install "sandbase"
@@ -19,7 +19,7 @@ class Sandbase < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/sandbaseai/cli/releases/download/v0.1.1/sandbase_0.1.1_darwin_arm64.tar.gz"
-      sha256 "feffeed5f6deed79b4f37d767da9a83e9e2edf065b32b91ecd312992b1799cc1"
+      sha256 "7b4afc5c51dc05087f6cf1cf727f3e6c25a752a421a70f37481ffd9b67fba581"
 
       define_method(:install) do
         bin.install "sandbase"
@@ -30,14 +30,14 @@ class Sandbase < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/sandbaseai/cli/releases/download/v0.1.1/sandbase_0.1.1_linux_amd64.tar.gz"
-      sha256 "4c5c6d007dbfafbe9015e49723db55814954f1c6983697e36178babb1b7efe0e"
+      sha256 "eceb2b298f6a988b015f510b4f3e5e69bc46816222c2292286774aabacc39533"
       define_method(:install) do
         bin.install "sandbase"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/sandbaseai/cli/releases/download/v0.1.1/sandbase_0.1.1_linux_arm64.tar.gz"
-      sha256 "db77f968436ad9d9fe75bdb36d4579838186ab281601319cabaef187ea45b31b"
+      sha256 "258885ffdf57c1d0c3be5987dbdd1723237e7dbb602ec77f0e5ae82cfe392568"
       define_method(:install) do
         bin.install "sandbase"
       end
