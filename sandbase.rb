@@ -5,21 +5,21 @@
 class Sandbase < Formula
   desc "SandBase AI platform CLI"
   homepage "https://sandbase.ai"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sandbaseai/cli/releases/download/v0.2.2/sandbase_0.2.2_darwin_amd64.tar.gz"
-      sha256 "ba9fe535c3e328550f8123e6f9d345dea297a07505cb9dfeff9bac1442462917"
+      url "https://github.com/sandbaseai/cli/releases/download/v0.2.3/sandbase_0.2.3_darwin_amd64.tar.gz"
+      sha256 "adc57e3df1430d7a8c1b517c2d6cb8135c685dd742aa7b2ea3196291451872b8"
 
       define_method(:install) do
         bin.install "sandbase"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sandbaseai/cli/releases/download/v0.2.2/sandbase_0.2.2_darwin_arm64.tar.gz"
-      sha256 "4bdb603ce6ba8b642aea5dd79e12519b07972085356608368f5f0ca7ce583fd2"
+      url "https://github.com/sandbaseai/cli/releases/download/v0.2.3/sandbase_0.2.3_darwin_arm64.tar.gz"
+      sha256 "fbff7b193b982d3ae55308f78fa29cbc540bb5d2379cc133ad6fd1c15afed305"
 
       define_method(:install) do
         bin.install "sandbase"
@@ -29,15 +29,15 @@ class Sandbase < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sandbaseai/cli/releases/download/v0.2.2/sandbase_0.2.2_linux_amd64.tar.gz"
-      sha256 "eefae3b757a832a35c14c4043de7938f4b7170f4aefd9d0bc9b8a6608582ae35"
+      url "https://github.com/sandbaseai/cli/releases/download/v0.2.3/sandbase_0.2.3_linux_amd64.tar.gz"
+      sha256 "c7342b8d835a514847f042dbd6ad35bfaed77129a9f6b7afddc5378248e06564"
       define_method(:install) do
         bin.install "sandbase"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sandbaseai/cli/releases/download/v0.2.2/sandbase_0.2.2_linux_arm64.tar.gz"
-      sha256 "8198a6703ee35765847183ff8dad7b31dde4f9dabf9d215b11c6dd1448620f51"
+      url "https://github.com/sandbaseai/cli/releases/download/v0.2.3/sandbase_0.2.3_linux_arm64.tar.gz"
+      sha256 "c809bfa2d19c401c8464acd4758398fa7ba205e5815cc9c0e1c5c5db5e30949f"
       define_method(:install) do
         bin.install "sandbase"
       end
