@@ -13,6 +13,9 @@ brew install sandbaseai/tap/sandbaseai-cli
 sandbase connect
 ```
 
+The fully qualified install command follows Homebrew 6's least-privilege trust
+model: it trusts this formula only, not every current or future item in the tap.
+
 It connects Codex, Claude Code, Cursor, Gemini CLI, Windsurf, OpenCode, and other
 supported MCP clients to 2,000+ AI models and APIs with one onboarding command.
 
