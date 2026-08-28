@@ -1,19 +1,24 @@
 # SandBase Homebrew Tap
 
-This repository preserves the Homebrew formula for the legacy SandBase `v0.2.4`
-standalone binary.
+This repository provides the official Homebrew formulas for SandBase command-line tools.
 
 ## Current SandBase CLI
 
-For the actively maintained open-source CLI and MCP bridge, use the immutable
-v0.1.17 GitHub Release while the npm `latest` tag is being updated:
+Install the actively maintained open-source CLI and MCP bridge:
 
 ```sh
-npx -y https://github.com/sandbaseai/cli/releases/download/v0.1.17/sandbaseai-cli-0.1.17.tgz connect
+brew install sandbaseai/tap/sandbaseai-cli
+sandbase connect
 ```
 
 It connects Codex, Claude Code, Cursor, Gemini CLI, Windsurf, OpenCode, and other
 supported MCP clients to 2,000+ AI models and APIs with one onboarding command.
+
+Inspect the verified 25-client catalog without signing in or changing configuration:
+
+```sh
+sandbase catalog --json
+```
 
 - [Source code and documentation](https://github.com/sandbaseai/cli)
 - [Star the actively maintained CLI](https://github.com/sandbaseai/cli/stargazers)
@@ -23,7 +28,7 @@ supported MCP clients to 2,000+ AI models and APIs with one onboarding command.
 
 ## Legacy formula
 
-The existing formula remains available for users who specifically need the
+The original formula remains available for users who specifically need the
 historical Go binary:
 
 ```sh
@@ -31,6 +36,6 @@ brew tap sandbaseai/tap
 brew install sandbaseai/tap/sandbase
 ```
 
-The Homebrew formula and the current TypeScript CLI have different release lines.
-New installations should use the v0.1.17 command above unless they explicitly
-require the legacy binary.
+The legacy formula and the current TypeScript CLI have different release lines.
+New installations should use `sandbaseai-cli` unless they explicitly require the
+historical binary.
