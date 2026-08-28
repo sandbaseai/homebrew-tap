@@ -1,0 +1,39 @@
+name: Test formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: formula-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, ubuntu-latest]
+
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@23156a3d9674d7f52f74f1a58979ec4d77847166
+
+      - name: Check formula style
+        run: brew style sandbaseai/tap
+
+      - name: Audit formula
+        run: brew audit --strict sandbaseai/tap/sandbaseai-cli
+
+      - name: Install formula
+        run: brew install --build-from-source sandbaseai/tap/sandbaseai-cli
+
+      - name: Test formula
+        run: brew test sandbaseai/tap/sandbaseai-cli

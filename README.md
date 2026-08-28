@@ -1,5 +1,7 @@
 # SandBase Homebrew Tap
 
+[![Test formula](https://github.com/sandbaseai/homebrew-tap/actions/workflows/test.yml/badge.svg)](https://github.com/sandbaseai/homebrew-tap/actions/workflows/test.yml)
+
 This repository provides the official Homebrew formulas for SandBase command-line tools.
 
 ## Current SandBase CLI
